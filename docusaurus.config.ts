@@ -94,6 +94,18 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "mechanixOsSidebar",
+          position: "left",
+          label: "Mechanix OS",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "mechaCloudSidebar",
+          position: "left",
+          label: "Mecha Cloud",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "apiSidebar",
           position: "left",
           label: "API",

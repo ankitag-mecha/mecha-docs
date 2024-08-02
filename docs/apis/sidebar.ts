@@ -2,10 +2,22 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 const sidebar: SidebarsConfig = {
   apisidebar: [
-    // {
-    //   type: "doc",
-    //   id: "apis/mecha-cloud-apis",
-    // },
+    {
+      type: "doc",
+      id: "apis/mecha-cloud-apis",
+    },
+    {
+      type: "category",
+      label: "Authentication",
+      items: [
+        {
+          type: "doc",
+          id: "apis/get-sso-token",
+          label: "Get SSO token",
+          className: "api-method post",
+        },
+      ],
+    },
     {
       type: "category",
       label: "Machines",
@@ -25,13 +37,13 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-machine-logs-streams",
-          label: "Get machine logs stream data",
+          label: "Fetch machine logs stream data",
           className: "api-method post",
         },
         {
           type: "doc",
           id: "apis/get-machine-logs",
-          label: "Get machine logs data",
+          label: "Fetch machine logs data",
           className: "api-method post",
         },
         {
@@ -43,19 +55,19 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-machine-metrics",
-          label: "Get machine metrics data",
+          label: "Fetch machine metrics data",
           className: "api-method post",
         },
         {
           type: "doc",
           id: "apis/get-machines",
-          label: "Get machines list",
+          label: "Fetch machines list",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machine-by-id",
-          label: "Get machine details",
+          id: "apis/get-machine-details",
+          label: "Fetch machine details",
           className: "api-method get",
         },
         {
@@ -78,12 +90,6 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/re-provision-certificate",
-          label: "Re-Provision certificate",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "apis/re-issue-certificate",
           label: "Re-Issue certificate",
           className: "api-method post",
@@ -91,13 +97,13 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-previously-signed-certificates",
-          label: "Get previously signed certificates",
+          label: "Fetch previously signed certificates",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "apis/get-certificate",
-          label: "Get active certificate details",
+          label: "Fetch active certificate details",
           className: "api-method get",
         },
         {
@@ -121,7 +127,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-status",
-          label: "Get machine provision request status",
+          label: "Fetch machine provision request status",
           className: "api-method post",
         },
         {
@@ -139,7 +145,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-network-by-network-id",
-          label: "Get network details",
+          label: "Fetch network details",
           className: "api-method get",
         },
         {
@@ -163,7 +169,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-networks",
-          label: "Get list of networks",
+          label: "Fetch list of networks",
           className: "api-method get",
         },
         {
@@ -181,13 +187,13 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/get-network-nodes",
-          label: "Get network nodes",
+          label: "Fetch network nodes",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "apis/get-network-node",
-          label: "Get network node details",
+          label: "Fetch network node details",
           className: "api-method get",
         },
         {
@@ -205,7 +211,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "apis/generate-ipv-4-address",
-          label: "Generate IPV4 address",
+          label: "Generate IPv4 address",
           className: "api-method get",
         },
         {

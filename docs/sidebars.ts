@@ -1,6 +1,8 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 import apiSidebar from "./apis/sidebar";
 import hardwareSidebar from "./hardware/sidebar";
+import mechanixOsSidebar from "./mechanix-os/sidebar";
+import mechaCloudSidebar from "./mecha-cloud/sidebar";
 
 const sidebars: SidebarsConfig = {
   // hardwareSidebar: [
@@ -10,7 +12,9 @@ const sidebars: SidebarsConfig = {
   //   },
   // ],
   hardwareSidebar,
-  apiSidebar,
+  mechanixOsSidebar,
+  mechaCloudSidebar,
+  apiSidebar
 };
 
 export default sidebars;
