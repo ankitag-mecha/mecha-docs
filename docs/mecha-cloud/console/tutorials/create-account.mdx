@@ -1,0 +1,71 @@
+---
+sidebar_position: 1
+
+title: Create an account on Mecha Console
+---
+
+import captchaUrl from './assets/signup-captcha.png';
+import verifyEmailUrl from './assets/verify-email.png';
+import verifiedEmailUrl from './assets/verified-email.png';
+import signinGithubUrl from './assets/signin-github.png';
+import authorizeGithubUrl from './assets/authorize-github.png';
+
+
+# Create an account on Mecha Console
+
+In this tutorial, we'll walk you through the steps to create an account on Mecha.
+
+### Launch Console
+
+Open your web browser and go to https://console.sandbox-v1.mecha.build/auth/signup. 
+You have two options: **Sign up with Email** or **Sign up with GitHub**. Choose the method that works best for you.
+
+### Option 1: Sign up with Email
+
+1. **Enter Your Information**: On the signup form, provide the following details:
+    - **Email Address**: Use a valid email address that you can access.
+    - **Username**: Fill a relevant username for your account, you can alternatively use it for logging in
+    - **Password**: Create a strong password that meets the platform’s security criteria.
+2. **Submit the Form**: Click the "Sign up" button to register your account.
+3. **Captcha Challenge**: If prompted, complete any CAPTCHA or security challenge powered by Cloudflare. 
+
+<img src={captchaUrl} alt="CAPTCHA" />;
+
+1. **Proceed to Signup**: Once you pass the Captcha check, you’ll be redirected to the email verification status page.
+
+    <img src={verifyEmailUrl} alt="VERIFY EMAIL" />;
+
+1. **Check Your Inbox**: After signing up, check your email inbox for a verification email from Mecha.
+2. **Open the Verification Email**: Find the email titled something like "Please Verify Your Email Address" and open it.
+3. **Click the Verification Link**: Inside the email, click the link to verify your email address. This step is necessary to activate your account.
+
+    <img src={verifyEmailUrl} alt="VERIFY EMAIL" />;
+
+1. **Return to the Sign-In Page**: After the email is successfully verified, click on Continue sign in button.
+2. **Enter Your Credentials**: Use the email (or username) and password you registered with to sign in.
+3. **Access Your Dashboard**: After logging in, you’ll be taken to your console dashboard, where you can start using Mecha.
+
+### Option 2: Sign up with Github
+
+For a quicker registration process, you can sign up using your GitHub account.
+
+1. **Click the GitHub Button**: On the signup page, look for the "Sign in with GitHub" button.
+2. **Authorize Access**: You will be redirected to a new page, asking you to authorize Mecha to access your GitHub account.
+
+If you are not logged into GitHub, you will be first required to do so
+
+<img src={signinGithubUrl} alt="SIGNIN GITHUB" />;
+
+Else it will directly ask you to Authorize Mecha
+
+<img src={authorizeGithubUrl} alt="AUTHORIZE GITHUB" />;
+
+1. **Complete the Signup**: Once authorized, your GitHub account will be linked to Mecha, and you’ll be signed in automatically.
+    - **Note**: If you prefer to sign up using email instead of GitHub, proceed to the next step.
+
+### Troubleshooting Tips
+
+- **Captcha Issues**: If you get stuck at the **Captcha** check, try refreshing the page or using a different browser.
+- **Email Verification**: If you don’t receive the verification email, check your spam folder or request a new one via ‘Resend link’ button.
+
+That's it! You've successfully created and verified your account on Mecha. You're now ready to explore Mecha Console.

@@ -4,58 +4,74 @@ const sidebar: SidebarsConfig = {
   mechaCloudSidebar: [
     {
       type: "category",
-      label: "Provisioning",
+      label: "Console",
       collapsible: true,
       collapsed: true,
       items: [
-        "mecha-cloud/provisioning/tutorials",
-        "mecha-cloud/provisioning/how-to-guides",
-        "mecha-cloud/provisioning/concepts",
+        // "mecha-cloud/console/tutorials",
+        {
+          type: "category",
+          label: "Tutorials",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "mecha-cloud/console/tutorials/create-account",
+            "mecha-cloud/console/tutorials/secure-account",
+            "mecha-cloud/console/tutorials/add-first-device",
+            "mecha-cloud/console/tutorials/new-network",
+            "mecha-cloud/console/tutorials/enable-networking",
+            "mecha-cloud/console/tutorials/ssh-device",
+            "mecha-cloud/console/tutorials/telemetry"
+          ],
+        },
+        {
+          type: "category",
+          label: "How-to Guides",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "mecha-cloud/console/how-to-guides/account-management",
+            "mecha-cloud/console/how-to-guides/generate-api-keys"
+          ],
+        }
+        // "mecha-cloud/console/how-to-guides",
+        // "mecha-cloud/console/concepts",
       ],
     },
     {
       type: "category",
-      label: "Networking",
+      label: "REST API",
       collapsible: true,
       collapsed: true,
       items: [
-        "mecha-cloud/networking/tutorials",
-        "mecha-cloud/networking/how-to-guides",
-        "mecha-cloud/networking/concepts",
-      ],
-    },
-    {
-      type: "category",
-      label: "Telemetry",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "mecha-cloud/telemetry/tutorials",
-        "mecha-cloud/telemetry/how-to-guides",
-        "mecha-cloud/telemetry/concepts",
-      ],
-    },
-    {
-      type: "category",
-      label: "Security",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "mecha-cloud/security/tutorials",
-        "mecha-cloud/security/how-to-guides",
-        "mecha-cloud/security/concepts",
-      ],
-    },
-    {
-      type: "category",
-      label: "Reference",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "mecha-cloud/reference/mecha-agent",
-        "mecha-cloud/reference/developer-cli",
-        "mecha-cloud/reference/console",
-        "mecha-cloud/reference/rest-api"
+        // "mecha-cloud/console/tutorials",
+        {
+          type: "category",
+          label: "Tutorials",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "mecha-cloud/console/tutorials/create-account",
+            "mecha-cloud/console/tutorials/secure-account",
+            "mecha-cloud/console/tutorials/add-first-device",
+            "mecha-cloud/console/tutorials/new-network",
+            "mecha-cloud/console/tutorials/enable-networking",
+            "mecha-cloud/console/tutorials/ssh-device",
+            "mecha-cloud/console/tutorials/telemetry"
+          ],
+        },
+        {
+          type: "category",
+          label: "How-to Guides",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "mecha-cloud/console/how-to-guides/account-management",
+            "mecha-cloud/console/how-to-guides/generate-api-keys"
+          ],
+        }
+        // "mecha-cloud/console/how-to-guides",
+        // "mecha-cloud/console/concepts",
       ],
     },
     "mecha-cloud/status-page",
