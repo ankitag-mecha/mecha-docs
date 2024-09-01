@@ -1,0 +1,57 @@
+---
+sidebar_position: 6
+
+title: Query Logs On Grafana
+---
+import logs1Url from './assets/logs-on-grafana1.png';
+import logs2Url from './assets/logs-on-grafana2.png';
+
+# Query Logs On Grafana
+
+### Step 1: Log In to Your Mecha Console
+
+- Start by logging into your Mecha Console using your credentials.
+
+### Step 2: Navigate to the Machines Section
+
+- From the top menu, click on **Machines** to access the list of machines.
+- Alternatively, if the machine is listed on the Console home, you can select it directly from there.
+
+### Step 3: Select the Machine
+
+- Choose the machine for which you want to check the metrics.
+- After selecting the machine, go to the Logs section.
+
+### Step 4: Explore Logs in Grafana
+
+- In the Logs section, click on the **Explore** button.
+    - This action will automatically open the Grafana service without requiring additional authentication.
+- Ensure that the slected the datasource is l**oki**
+
+### Step 5: Apply relevant filters
+
+- In label filters select machine_id for viewing logs
+    - In label filters you can also select the machine and filter logs according to machine-alias
+
+### Step 4: Set the Time Range
+
+- Choose the time range you want to query logs for. This helps in narrowing down to specific events within a given period.
+
+### Step 5: View and Analyze Logs
+
+- The logs will be displayed in real-time, allowing you to monitor the machine’s activities and diagnose issues.
+- Use the available options to further refine your queries or add new ones for deeper analysis.
+
+**Screenshot Reference:**
+
+<img src={logs1Url} alt="Logs on Grafana 1" />;
+
+<img src={logs2Url} alt="Logs on Grafana 2" />;
+
+### Step 6: Download Logs
+
+- If needed, you can download the logs by clicking on the **Download** button, allowing you to save them for further analysis or record-keeping.
+
+---
+
+This guides should provide a clear and concise way for users to interact with the Machine query logs on Grafana.

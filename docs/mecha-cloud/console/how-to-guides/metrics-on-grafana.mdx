@@ -1,0 +1,26 @@
+---
+sidebar_position: 5
+
+title: Query Metrics On Grafana
+---
+import metricsUrl from './assets/metrics-on-grafana.png';
+
+# Query Metrics On Grafana
+
+To query metrics on Grafana using the **Explore** feature, follow these steps:
+
+1. **Navigate to Explore**:
+    - In the Grafana interface, go to the **Explore** section from the side menu.
+2. **Select the Data Source**:
+    - Choose **Prometheus** as your data source from the dropdown menu.
+3. **Select Metrics**:
+    - In the **Metrics** filter, select the desired metrics you wish to query.
+4. **Filter by Machine ID**:
+    - Use the label filters to select the **machine_id** that you want to focus on.
+5. **Build the Query**:
+    - Construct your query using the available options and syntax as shown in the interface. The query will allow you to retrieve and analyze the specific metrics related to the selected machine.
+
+Once your query is built, Grafana will display the results in real-time, allowing you to visualize and explore the metrics data effectively.
+
+For detailed visuals and examples, refer to the screenshot below.
+<img src={metricsUrl} alt="Metrics on Grafana" />;

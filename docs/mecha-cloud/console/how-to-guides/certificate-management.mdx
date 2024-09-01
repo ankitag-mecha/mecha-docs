@@ -1,0 +1,61 @@
+---
+sidebar_position: 4
+
+title: Machine Certificate Management
+---
+# Machine Certificate Management
+
+### How to Manage Machine Certificates: Downloading, Regenerating, and Viewing Revoked Certificates
+
+This guide will walk you through the process of downloading the machine certificate and the Certificate Authority (CA) bundle as `.crt` files from the Mecha Console.
+
+### Step 1: Access the Machine's Certificate Settings
+
+1. Log in to your Mecha Console.
+2. Navigate to the **Machines** section from the top menu (or directly from Console home if listed).
+3. Select the machine for which you want to download the certificate (e.g., "Golem Drone").
+4. Go to the **Settings** tab of the selected machine.
+5. From the left-hand menu, select **Certificate**. This will open the machine's certificate details.
+
+### Step 2: Download the Machine Certificate
+
+1. In the **Certificate** section, locate the **Download certificate** button.
+2. Click on the **Download certificate** button.
+3. The certificate will be downloaded as a `.crt` file to your local machine.
+
+### Step 3: Download the CA Bundle
+
+1. Below the machine certificate information, find the **Issuing certificate** section.
+2. Click on the **Download CA Bundle** button.
+3. The CA bundle will be downloaded as a `.crt` file to your local machine.
+
+### Step 4: Verify the Downloads
+
+1. After the files have been downloaded, navigate to the download location on your computer.
+2. Ensure that both the machine certificate and the CA bundle are saved as `.crt` files.
+
+### Step 4: Regenerate the Machine Certificate
+
+1. If you need to regenerate the machine certificate (e.g., if the current one is compromised or expired), click on the **Regenerate** button located at the top-right corner of the certificate section.
+2. Confirm the regeneration process when prompted. Note that regenerating the certificate will revoke the current certificate.
+3. Once regenerated, download the new machine certificate and CA bundle as described in Steps 2 and 3.
+
+### Step 5: View Revoked Certificates
+
+1. Scroll down to the **Previously issued certificates** section.
+2. Here, you can see a list of all previously issued certificates along with their serial numbers and statuses.
+3. Revoked certificates will be marked with a "Revoked" status and the date and time they were revoked.
+4. You can use this information to audit or troubleshoot certificate issues.
+
+### Step 6: Verify the Downloads
+
+1. After the files have been downloaded, navigate to the download location on your computer.
+2. Ensure that the machine certificate, CA bundle, and any new certificates are saved as `.crt` files.
+
+### Conclusion
+
+You have successfully managed the machine certificates in the Mecha Console, including downloading, regenerating, and viewing revoked certificates. Ensure that you securely store these files and manage the certificate lifecycle as needed.
+
+---
+
+If you encounter any issues or have questions, refer to the Mecha documentation or contact support for further assistance.
