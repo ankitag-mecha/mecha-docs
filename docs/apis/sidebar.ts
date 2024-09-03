@@ -2,17 +2,36 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 const sidebar: SidebarsConfig = {
   apisidebar: [
-    {
-      type: "doc",
-      id: "apis/mecha-cloud-apis",
-    },
+    // {
+    "apis/first-request",
+    "apis/api-authentication",
+
+    
     {
       type: "category",
-      label: "Authentication",
+      label: "How-to Guides",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "apis/how-to-guides/prov-machine",
+        "apis/how-to-guides/machine-logs-metrics",
+        "apis/how-to-guides/add-virtual-ip",
+        "apis/how-to-guides/generate-grafana-sso"
+      ],
+    },
+
+    // start APIS
+    // {
+    //   type: "doc",
+    //   id: "apis/references/mecha-cloud-apis",
+    // },
+    {
+      type: "category",
+      label: "Grafana Integration",
       items: [
         {
           type: "doc",
-          id: "apis/get-sso-token",
+          id: "apis/references/get-sso-token",
           label: "Get SSO token",
           className: "api-method post",
         },
@@ -24,61 +43,61 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/update-machine",
+          id: "apis/references/update-machine",
           label: "Update machine details",
           className: "api-method put",
         },
         {
           type: "doc",
-          id: "apis/machine-telemetry",
+          id: "apis/references/machine-telemetry",
           label: "Add or update machine telemetry",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machine-logs-streams",
+          id: "apis/references/get-machine-logs-streams",
           label: "Fetch machine logs stream data",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machine-logs",
+          id: "apis/references/get-machine-logs",
           label: "Fetch machine logs data",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/export-machine-logs",
+          id: "apis/references/export-machine-logs",
           label: "Export machine logs data",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machine-metrics",
+          id: "apis/references/get-machine-metrics",
           label: "Fetch machine metrics data",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machines",
+          id: "apis/references/get-machines",
           label: "Fetch machines list",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-machine-details",
+          id: "apis/references/get-machine-details",
           label: "Fetch machine details",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/check-alias-in-use",
+          id: "apis/references/check-alias-in-use",
           label: "Check alias is already used or not",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/remove-machine",
+          id: "apis/references/remove-machine",
           label: "Remove machine",
           className: "api-method delete",
         },
@@ -90,31 +109,31 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/re-issue-certificate",
+          id: "apis/references/re-issue-certificate",
           label: "Re-Issue certificate",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-previously-signed-certificates",
+          id: "apis/references/get-previously-signed-certificates",
           label: "Fetch previously signed certificates",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/get-certificate",
+          id: "apis/references/get-certificate",
           label: "Fetch active certificate details",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/download-certificate",
+          id: "apis/references/download-certificate",
           label: "Download certificate",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/download-ca-bundle",
+          id: "apis/references/download-ca-bundle",
           label: "Download CA-Bundle certificates",
           className: "api-method get",
         },
@@ -126,13 +145,13 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/get-status",
+          id: "apis/references/get-status",
           label: "Fetch machine provision request status",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/add-machine-provision-request",
+          id: "apis/references/add-machine-provision-request",
           label: "Add machine provision request",
           className: "api-method post",
         },
@@ -144,79 +163,79 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/get-network-by-network-id",
+          id: "apis/references/get-network-by-network-id",
           label: "Fetch network details",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/update-network",
+          id: "apis/references/update-network",
           label: "Update network",
           className: "api-method put",
         },
         {
           type: "doc",
-          id: "apis/delete-network",
+          id: "apis/references/delete-network",
           label: "Delete network",
           className: "api-method delete",
         },
         {
           type: "doc",
-          id: "apis/set-network-as-default",
+          id: "apis/references/set-network-as-default",
           label: "Set default network",
           className: "api-method put",
         },
         {
           type: "doc",
-          id: "apis/get-networks",
+          id: "apis/references/get-networks",
           label: "Fetch list of networks",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/add-network",
+          id: "apis/references/add-network",
           label: "Add network",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/enable-node",
+          id: "apis/references/enable-node",
           label: "Enable network",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "apis/get-network-nodes",
+          id: "apis/references/get-network-nodes",
           label: "Fetch network nodes",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/get-network-node",
+          id: "apis/references/get-network-node",
           label: "Fetch network node details",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/delete-network-node",
+          id: "apis/references/delete-network-node",
           label: "Delete network node",
           className: "api-method delete",
         },
         {
           type: "doc",
-          id: "apis/check-networks-node-dns-name",
+          id: "apis/references/check-networks-node-dns-name",
           label: "Check DNS name in use for network nodes",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/generate-ipv-4-address",
+          id: "apis/references/generate-ipv-4-address",
           label: "Generate IPv4 address",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "apis/check-networks-dns-name",
+          id: "apis/references/check-networks-dns-name",
           label: "Check DNS name in use for networks",
           className: "api-method get",
         },
@@ -228,12 +247,16 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "apis/issue-ssh-certificate",
+          id: "apis/references/issue-ssh-certificate",
           label: "Issue SSH certificate",
           className: "api-method post",
         },
       ],
-    },
+    }, // end APIS
+
+    
+    // },
+    
   ],
 };
 

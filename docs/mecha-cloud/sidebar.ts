@@ -71,46 +71,6 @@ const sidebar: SidebarsConfig = {
         // "mecha-cloud/console/concepts",
       ],
     },
-    {
-      type: "category",
-      label: "REST API",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: "category",
-          label: "Tutorials",
-          collapsible: true,
-          collapsed: true,
-          items: [
-            "mecha-cloud/rest-api/tutorials/first-request"
-          ],
-        },
-        {
-          type: "category",
-          label: "How-to Guides",
-          collapsible: true,
-          collapsed: true,
-          items: [
-            "mecha-cloud/rest-api/how-to-guides/prov-machine",
-            "mecha-cloud/rest-api/how-to-guides/machine-logs-metrics",
-            "mecha-cloud/rest-api/how-to-guides/add-virtual-ip",
-            "mecha-cloud/rest-api/how-to-guides/generate-grafana-sso"
-          ],
-        },
-        {
-          type: "category",
-          label: "References",
-          collapsible: true,
-          collapsed: true,
-          items: [
-            "mecha-cloud/rest-api/references/api-authentication"
-          ],
-        }
-        // "mecha-cloud/console/how-to-guides",
-        // "mecha-cloud/console/concepts",
-      ],
-    },
     "mecha-cloud/status-page",
     // {
     //   type: "link",
