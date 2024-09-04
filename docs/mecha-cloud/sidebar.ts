@@ -71,12 +71,30 @@ const sidebar: SidebarsConfig = {
         // "mecha-cloud/console/concepts",
       ],
     },
+    {
+      type: "category",
+      label: "Mecha Agent",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "mecha-cloud/agent/overview",
+        {
+          type: "category",
+          label: "Services",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "mecha-cloud/agent/services/provisioning",
+            "mecha-cloud/agent/services/messaging",
+            "mecha-cloud/agent/services/status",
+            "mecha-cloud/agent/services/settings",
+            "mecha-cloud/agent/services/networking",
+            "mecha-cloud/agent/services/telemetry"
+          ]
+        }
+      ]
+    },
     "mecha-cloud/status-page",
-    // {
-    //   type: "link",
-    //   label: "Status Page", // sidebar label
-    //   href: "/mecha-cloud/status-page"
-    // },
   ],
 };
 

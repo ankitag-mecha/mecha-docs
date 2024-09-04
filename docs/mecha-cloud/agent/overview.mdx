@@ -1,0 +1,196 @@
+---
+sidebar_position: 1
+title: Overview
+---
+# Overview
+
+**Mecha-Agent** is an open-source tool designed to manage and monitor Mecha Machines. It provides a range of services to ensure efficient operation and communication within the Mecha ecosystem.
+
+## Services
+
+- **Provisioning**: Configuring and setting up Mecha Machines for operation within the network, including initial setup and configurations.
+
+- **Messaging**: Facilitating secure communication between Mecha Machines and other components, supporting multiple messaging protocols and real-time data transmission.
+
+- **Machine Status**: Monitoring the health and operational status of Mecha Machines providing alerts for critical issues.
+
+- **Settings**: Configuring various operational parameters of the Mecha Agent, including network configurations, logging options, and custom settings.
+
+- **Networking**: Managing connectivity aspects of Mecha Machines, supporting different network protocols, and handling dynamic network environments.
+
+- **Telemetry**: Collecting and transmitting performance data from Mecha Machines to monitor system health, optimize performance, and analyze machine operations.
+
+
+## Set up Mecha Agent
+
+<details>
+  <summary><b>Docker</b>: Deploy the Mecha Agent using Docker containers for a consistent and isolated environment, enabling easy scaling and management across different systems.</summary>
+
+  **Run Mecha Agent in a Docker container**
+
+  Mecha Agent is available as a Docker container image on the following platforms:
+
+  - Linux containers for AMD64 and ARM64. [Docker Hub link for Linux containers](#)
+  - Windows containers for AMD64. [Docker Hub link for Windows containers](#)
+
+  **Before you begin**
+
+  - Install [Docker](https://docker.io/) on your computer.
+  - Create and save a Grafana Agent YAML [configuration file](https://grafana.com/docs/agent/latest/static/configuration/create-config-file/) on your computer.
+
+  **Run a Linux Docker container**
+
+  To run a Mecha Agent Docker container on Linux, run the following command in a terminal window:
+
+  ```sh
+  docker run \
+    -v WAL_DATA_DIRECTORY:/etc/agent/data \
+    -v MECHA_AGENT_SETTINGS_PATH:/etc/agent/settings.yml \
+    mecha/agent:v0.42.0
+  ```
+Replace MECHA_AGENT_SETTINGS_PATH with the configuration file path on your Linux host system.
+
+</details>
+
+<details>
+  <summary><b>Linux</b>: Install and configure the Mecha Agent on Linux-based operating systems. Ensure compatibility with various distributions and make use of native system tools for deployment.</summary>
+
+  **Install Mecha Agent on Linux**
+
+  You can install Mecha Agent on Linux.
+
+  **Install on Debian or Ubuntu**
+
+  To install Mecha Agent on Debian or Ubuntu, run the following commands in a terminal window.
+
+  1. Import the GPG key and add the Mecha package repository:
+
+     ```sh
+     sudo mkdir -p /etc/apt/keyrings/
+     wget -q -O - https://apt.mecha.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/mecha.gpg > /dev/null
+     echo "deb [signed-by=/etc/apt/keyrings/mecha.gpg] https://apt.mecha.com stable main" | sudo tee /etc/apt/sources.list.d/mecha.list
+     ```
+
+  2. Update the repositories:
+
+     ```sh
+     sudo apt-get update
+     ```
+
+  3. Install Mecha Agent:
+
+     ```sh
+     sudo apt-get install mecha-agent
+     ```
+
+</details>
+
+<details>
+  <summary><b>macOS</b>: Set up the Mecha Agent on macOS environments. Utilize system-specific commands and configurations to ensure smooth operation on both Intel and Apple Silicon architectures.</summary>
+
+  You can install Mecha Agent on macOS with Homebrew.
+
+  **Before you begin**
+
+  Install [Homebrew](https://brew.sh/) on your computer.
+
+  **Install**
+
+  To install Mecha Agent on macOS, run the following commands in a terminal window.
+
+  1. Update Homebrew:
+     ```sh
+     brew update
+     ```
+
+  2. Install Mecha Agent:
+     ```sh
+     brew install mecha-agent
+     ```
+
+  Mecha Agent is installed by default at `$(brew --prefix)/Cellar/mecha-agent/VERSION`.
+
+</details>
+
+- **Windows**: Install and run the Mecha Agent on Windows operating systems, using available installation packages and compatible tools for seamless integration.
+
+- **Kubernetes**: Deploy the Mecha Agent within a Kubernetes cluster for automated orchestration, scaling, and management of containerized applications.
+
+- **Building from source**: Compile the Mecha Agent directly from the source code, allowing for custom modifications and optimizations suited to specific deployment requirements.
+
+
+---
+
+## Create Configuration File
+
+Files in the format of `yml` supported. When starting Mecha Agent you specify the path to the settings file via the `-- -s` flag. The **`settings.yml`** file is used to manage the configuration of Mecha Agent. Here is an example of what the file might look like:
+
+```yaml
+# settings.yml
+
+version: 1.0
+logging:
+  enabled: true
+  path: /var/log/mecha-agent.log
+  level: DEBUG
+server:
+  url: 0.0.0.0
+  port: 3001
+  tls: false
+messaging:
+  system:
+    enabled: true
+    url: nats://nats:4222
+  user:
+    enabled: true
+    url: nats://nats-machine:4222
+  service_urls:
+    base_url: 
+    get_nonce: /v1/messaging/get_nonce
+    issue_auth_token: /v1/messaging/issue_token
+settings:
+  storage:
+    type: file
+    path: ~/.mecha/agent/db
+status:
+  time_interval_sec: 60
+networking:
+  enabled: true
+  disco_addr: 0.0.0.0:8080
+  wireguard:
+    tun: wg0
+    port: 51820
+    userspace: linux
+telemetry:
+  enabled: true
+  collect:
+    system: true
+    user: true
+```
+
+## Environmental variables
+
+Environmental variables take precedence over config file values. Nested paths get mapped to config values by putting an underscore `__` (double underscore) between every level, so `messaging.service_urls.get_nonce` becomes `MECHA_AGEN_MESSAGING__SERVICE_URLS__GET_NONCE=<value>`.
+
+## Start Agent
+
+```yaml
+
+# to build 
+cargo build 
+
+# to run 
+sudo cargo run -- -s "./settings.yml"
+
+# env to set settings file path
+MECHA_AGENT_SETTINGS_PATH # default ~/.mecha/agent/settings.yml
+```
+
+## **Supported platforms**
+
+- Linux
+    - Minimum version: kernel 2.6.32 or later
+    - Architectures: AMD64, ARM64
+- macOS
+    - Minimum version: macOS 10.13 or later
+    - Architectures: AMD64 (Intel), ARM64 (Apple Silicon)
