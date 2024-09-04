@@ -40,7 +40,19 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         "hardware/bootloader/basics",
-        "hardware/bootloader/working-with-u-boot",
+        // "hardware/bootloader/working-with-u-boot/uboot-commands",
+        {
+          type: "category",
+          label: "Working With U-Boot",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "hardware/bootloader/working-with-uboot/uboot-commands",
+            "hardware/bootloader/working-with-uboot/mount-usb-storage",
+            "hardware/bootloader/working-with-uboot/working-with-variables",
+            "hardware/bootloader/working-with-uboot/change-boot-logo"
+          ],
+        },
         "hardware/bootloader/debugging-u-boot",
         "hardware/bootloader/build-from-source"
       ],

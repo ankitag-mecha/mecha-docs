@@ -1,8 +1,92 @@
 ---
-sidebar_position: 13
-title: USB
+sidebar_position: 2
+title: Mount USB Storage
 ---
-# USB
+# **Mount USB Storage**
+
+# Configuring USB Ports in Mecha Hardware
+
+In this tutorial, we'll walk through the steps to check and set the modes of the USB ports on Mecha hardware, which has two Type-A USB ports that can be configured as either host or gadget modes using sysfs entries. By default, USB-1 (J214) operates in gadget mode, and USB-2 (J213) operates in host mode.
+
+### 1. **Check the Current Mode of USB Ports**
+
+Before making any changes, it’s important to know the current mode of the USB ports. You can do this by reading the `role` file for each port in the sysfs.
+
+- **Check Mode for USB-1 (J214):**
+    
+    ```bash
+    cat /sys/class/udc/ci_hdrc.0/device/role
+    ```
+    
+- **Check Mode for USB-2 (J213):**
+    
+    ```bash
+    cat /sys/class/udc/ci_hdrc.1/device/role
+    ```
+    
+
+These commands will output either `host` or `gadget`, indicating the current mode of each USB port.
+
+### 2. **Set Host Mode for USB Ports**
+
+If you want to configure the USB ports to operate as a host, you can set the `role` to `host`. This mode allows the USB port to control other devices (e.g., USB drives, keyboards).
+
+- **Set Host Mode for USB-1 (J214):**
+    
+    ```bash
+    echo host > /sys/class/udc/ci_hdrc.0/device/role
+    ```
+    
+- **Set Host Mode for USB-2 (J213):**
+    
+    ```bash
+    echo host > /sys/class/udc/ci_hdrc.1/device/role
+    ```
+    
+
+After running these commands, the USB ports will be switched to host mode.
+
+### 3. **Set Gadget Mode for USB Ports**
+
+To switch the USB ports to gadget mode, where they can act as USB devices (e.g., appearing as storage devices or network interfaces when connected to a host), set the `role` to `gadget`.
+
+- **Set Gadget Mode for USB-1 (J214):**
+    
+    ```bash
+    echo gadget > /sys/class/udc/ci_hdrc.0/device/role
+    ```
+    
+- **Set Gadget Mode for USB-2 (J213):**
+    
+    ```bash
+    echo gadget > /sys/class/udc/ci_hdrc.1/device/role
+    ```
+    
+
+After these commands, the USB ports will function in gadget mode.
+
+### 4. **Verify the Changes**
+
+After setting the modes, it’s a good practice to verify that the changes have taken effect.
+
+- **Verify Mode for USB-1 (J214):**
+    
+    ```bash
+    cat /sys/class/udc/ci_hdrc.0/device/role
+    ```
+    
+- **Verify Mode for USB-2 (J213):**
+    
+    ```bash
+    cat /sys/class/udc/ci_hdrc.1/device/role
+    ```
+    
+
+The output should reflect the new mode (`host` or `gadget`) based on the changes you made.
+
+---
+
+# How to use USB on Linux machine
 
 ### **1. Plug in the USB Device**
 
