@@ -31,7 +31,7 @@ const config: Config = {
         config: {
           mechaConsole: {
             specPath: "static/apis/mechaApis.yaml",
-            outputDir: "docs/apis",
+            outputDir: "docs/apis/references",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
